@@ -1,0 +1,10 @@
+base
+ggplot2
+boot
+mvtnorm
+plyr
+rtip
+reshape2
+knitcitations
+devtools
+slidify

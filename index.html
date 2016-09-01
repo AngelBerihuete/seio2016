@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>rtip: paquete para el análisis de la pobreza y la desigualdad</title>
+  <meta charset="utf-8">
+  <meta name="description" content="rtip: paquete para el análisis de la pobreza y la desigualdad">
+  <meta name="author" content="C.D. Ramos, A. Berihuete, M.A. Sordo">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>rtip: paquete para el análisis de la pobreza y la desigualdad</h1>
+    <h2>XXXVI Congreso Nacional de la SEIO</h2>
+    <p>C.D. Ramos, A. Berihuete, M.A. Sordo<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Introducción</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Justificación</h3>
+
+<p>Proyecto: Desigualdad y pobreza en Andalucía: un estudio    comparativo con los países de la Unión Europea (2005-2010), PRY103/12, Centro de Estudios Andaluces (aprobado en la 8.ª edición de la Convocatoria Pública de Proyectos de Investigación en el año 2012 de la Fundación Centro de Estudios Andaluces). </p>
+
+<p>Equipo de investigación: M.A. Sordo Díaz (Coord.),  A. Berihuete Macías y C.D. Ramos González. </p>
+
+<p>Publicaciones generadas: </p>
+
+<p>Las conclusiones del estudio realizado se recogen en las publicaciones:</p>
+
+<ol>
+<li>Desigualdad y pobreza en Andalucía: un estudio comparativo con los países de la Unión Europea (2005-2010) (Factoría de Ideas, 15 de mayo 2014, Centro de Estudios Andaluces)</li>
+<li>Bienestar, desigualdad y pobreza en Andalucía: un estudio comparativo con el resto de España a partir de las encuestas de condiciones de vida 2006 y 2012 (Colección Actualidad Nº 71, 13 de noviembre 2014, Centro de Estudios Andaluces)</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Introducción</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Indicadores y curvas proporcionadas por rtip</h3>
+
+<table><thead>
+<tr>
+<th>Análisis Pobreza</th>
+<th>Análisis Desigualdad</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Umbral de riesgo de pobreza (<em>arpt</em>)</td>
+<td>Coeficiente de Gini (<em>gini</em>)</td>
+</tr>
+<tr>
+<td>Tasa de riesgo de pobreza (<em>arpr</em>)</td>
+<td>Ratio de quintiles, S80/S20 (<em>qsr</em>)</td>
+</tr>
+<tr>
+<td>Desfase relativo de la renta mediana de la población en riesgo de pobreza (<em>rmpg</em>)</td>
+<td>Curva de Lorenz (<em>lc</em>)</td>
+</tr>
+<tr>
+<td>Índice FGT(1) <a href="*s1*">@FGT1984</a></td>
+<td><strong>Análisis Bienestar</strong></td>
+</tr>
+<tr>
+<td>Índice SST <a href="*s2*">@Shorrocks1995</a></td>
+<td>Rentas medias por hogar, persona y u.c. (<em>mih</em>, <em>mip</em>, <em>miuc</em>)</td>
+</tr>
+<tr>
+<td>Curva TIP <a href="*tip*">@Shorrocks1995 ; @Jenkins1997</a></td>
+<td>Curva de Lorenz Generalizada (<em>lc</em>)</td>
+</tr>
+</tbody></table>
+
+<p>(*) Ver manual de referencia [@rtip].</p>
+
+<p>Para su cálculo la información se obtiene de las encuestas EU-SILC (European Union Statistics on Income and Living Conditions) proporcionadas por Eurostat, y de las Encuestas de Condiciones de Vida (ECV) proporcionadas por el INE.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Introducción</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>¿Qué había sobre estas herramientas en R?</h3>
+
+<blockquote>
+<p><strong>ineq</strong> : Measuring Inequality, Concentration and Poverty (C. Gini, C. Lorenz y Lorenz Generalizada, Índices de pobreza de Foster y SST, entre otros)  </p>
+
+<p><strong>IC2</strong> :  Inequality and Concentration Indices and Curves (C. SGini, C. Lorenz y Lorenz Generalizada)</p>
+
+<p><strong>laeken</strong>[@Alfons2013]: Estimation of indicators on social exclusion and poverty (<em>arpt</em>, <em>arpr</em>, <em>rmpg</em>, <em>qsr</em>, <em>gini</em>).</p>
+</blockquote>
+
+<!-- ¿En __STATA__, los módulos: -->
+
+<!-- * __svylorenz__ : derives distribution-free variance estimates from complex survey data, of quantile group shares of a total, cumulative quantile group shares -->
+
+<!-- * __sumdist__ : calculates summary statistics for income distributions -->
+
+<!-- * __ineqdeco__: calculates inequality indices with decomposition by subgroup -->
+
+<!-- * __povdeco__: calculates poverty indices with decomposition by subgroup -->
+
+<!-- * __glcurve__: derives generalised Lorenz curve ordinates -->
+
+<!-- Autor: Stephen P. Jenkins (referencia)? 
+<!-- DAD @Buhmann1988 -->
+
+<h3>Aportaciones del paquete rtip</h3>
+
+<blockquote>
+<p>La información: la extrae de las encuestas EU-SILC y ECV.</p>
+
+<p>Para los indicadores: estimaciones puntuales e intervalos de confianza mediante bootstrap.</p>
+
+<p>Para las curvas: estimaciones de las ordenadas y tests dominancia [@Xu1997; @XuOsberg1998]</p>
+
+<p>Permite realizar comparaciones temporales y entre países o regiones.</p>
+</blockquote>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Instalación del paquete</h2>
+  </hgroup>
+  <article data-timings="">
+    <blockquote>
+<p>Desde <a href="https://github.com/AngelBerihuete/rtip">Github</a></p>
+</blockquote>
+
+<pre><code class="r">install.packages(&quot;devtools&quot;)
+devtools::install_github(&quot;AngelBerihuete/rtip&quot;)
+</code></pre>
+
+<blockquote>
+<p>Desde <a href="https://cran.r-project.org/web/packages/rtip/index.html">CRAN</a></p>
+</blockquote>
+
+<pre><code class="r">install.packages(&quot;rtip&quot;)
+</code></pre>
+
+<p>Una vez instalado basta ejecutar </p>
+
+<pre><code class="r">library(rtip)
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Carga de datos</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Las funciones <strong>loadLCS</strong> y <strong>loadEUSILC</strong></h3>
+
+<p>Pueden cargarse datos tanto del INE (ECV) como de Eurostat (EU-SILC) con las funciones</p>
+
+<pre><code class="r">loadLCS(lcs_d_file, lcs_h_file)
+loadEUSILC(eusilc_d_file, eusilc_h_file)
+</code></pre>
+
+<p>Vamos a trabajar durante la presentación con datos contenidos en el propio paquete</p>
+
+<pre><code class="r">data(&quot;LCS2014&quot;)
+head(LCS2014,3)
+</code></pre>
+
+<pre><code>##   DB010 DB020 DB040     DB090 HX040 HX050    HX090
+## 1  2014    ES  ES21 2537.6406     1   1.0 13301.80
+## 2  2014    ES  ES21  994.0731     4   2.3 13288.61
+## 3  2014    ES  ES21 1267.6372     3   2.0 22005.05
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>Carga de datos</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>La función <strong>setupDataset</strong></h3>
+
+<p>Una vez cargados los datos, la función <strong>setupDataset</strong> selecciona el país, la comunidad y establece los argumentos según el estudio</p>
+
+<pre><code class="r">Andalucia &lt;- setupDataset(LCS2014, country = &quot;ES&quot;, region = &quot;ES61&quot;,
+                          s = &quot;OECD&quot;, deflac = NULL, ppp = FALSE)
+Castilla_La_Mancha &lt;- setupDataset(LCS2014, region = &quot;ES42&quot;)
+Navarra &lt;- setupDataset(LCS2014, region = &quot;ES22&quot;)
+head(Navarra, 3)
+</code></pre>
+
+<pre><code>##      DB010 DB020 DB040    DB090 HX040 HX050    HX090     ipuc   wHX040
+## 1439  2014    ES  ES22 900.9000     4   2.5 14237.92 14237.92 3603.600
+## 1440  2014    ES  ES22 329.7968     5   3.0 14320.43 14320.43 1648.984
+## 1441  2014    ES  ES22 889.7933     4   2.5 14633.92 14633.92 3559.173
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>Indicadores de pobreza</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Algunos ejemplos para su cálculo: estimación puntual</h3>
+
+<pre><code class="r">arpt(Andalucia, pz = 0.6, ci = FALSE, rep = 1000, verbose = FALSE)
+</code></pre>
+
+<pre><code>## [1] 6091.28
+</code></pre>
+
+<pre><code class="r">arpr(Andalucia, arpt(Andalucia))
+</code></pre>
+
+<pre><code>## [1] 20.31785
+</code></pre>
+
+<pre><code class="r">s1(Andalucia, arpt(Andalucia))
+</code></pre>
+
+<pre><code>## [1] 498.4817
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>Indicadores de pobreza</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Algunos ejemplos para su cálculo: intervalo de confianza</h3>
+
+<p>Intervalo al 95% de confianza para el umbral de riesgo de pobreza</p>
+
+<pre><code class="r">arpt(Andalucia, pz = 0.6, ci = TRUE, rep = 1000, verbose = FALSE)
+</code></pre>
+
+<pre><code>## BOOTSTRAP CONFIDENCE INTERVAL CALCULATIONS
+## Based on 1000 bootstrap replicates
+## 
+## CALL : 
+## boot::boot.ci(boot.out = boot.arpt.value, type = &quot;basic&quot;)
+## 
+## Intervals : 
+## Level      Basic         
+## 95%   (5761, 6348 )  
+## Calculations and Intervals on Original Scale
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>Indicadores de pobreza</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Recordamos los diferentes indicadores y curvas calculados por rtip</h3>
+
+<table><thead>
+<tr>
+<th>Análisis Pobreza</th>
+<th>Análisis Desigualdad</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Umbral de riesgo de pobreza (<em>arpt</em>)</td>
+<td>Coeficiente de Gini (<em>gini</em>)</td>
+</tr>
+<tr>
+<td>Tasa de riesgo de pobreza (<em>arpr</em>)</td>
+<td>Ratio de quintiles, S80/S20 (<em>qsr</em>)</td>
+</tr>
+<tr>
+<td>Desfase relativo de la renta mediana de la población en riesgo de pobreza (<em>rmpg</em>)</td>
+<td>Curva de Lorenz (<em>lc</em>)</td>
+</tr>
+<tr>
+<td>Índice FGT(1) <a href="*s1*">@FGT1984</a></td>
+<td><strong>Análisis Bienestar</strong></td>
+</tr>
+<tr>
+<td>Índice SST <a href="*s2*">@Shorrocks1995</a></td>
+<td>Rentas medias por hogar, persona y u.c. (<em>mih</em>, <em>mip</em>, <em>miuc</em>)</td>
+</tr>
+<tr>
+<td>Curva TIP <a href="*tip*">@Shorrocks1995 ; @Jenkins1997</a></td>
+<td>Curva de Lorenz Generalizada (<em>lc</em>)</td>
+</tr>
+</tbody></table>
+
+<p>Para su cálculo la información se obtiene de las encuestas EU-SILC (European Union Statistics on Income and Living Conditions) proporcionadas por Eurostat, y de las Encuestas de Condiciones de Vida (ECV) proporcionadas por el INE.</p>
+
+<!-- Análisis Pobreza | Análisis Desigualdad -->
+
+<!-- ----------------------------------------- | ------------------------------  -->
+
+<!-- Umbral de riesgo de pobreza (*arpt*)  | Coeficiente de Gini (*gini*) | miuc -->
+
+<!-- Tasa de riesgo de pobreza (*arpr*)    | Ratio de quintiles, S80/S20 (*qsr*)  -->
+
+<!-- Desfase relativo de renta mediana de población en riesgo de pobreza (*rmpg*)      | Curva de Lorenz (*lc*)      -->
+
+<!-- Índice de pobreza FGT(1) (Foster, Greer and Thorbecke, 1984) (*s1*)                      | __Análisis Bienestar__ -->
+
+<!-- Índice de pobreza SST (Shorrocks, 1995)  (*s2*) | Rentas medias por hogar, persona y u.c. (*mih*, *mip*, *miuc*) -->
+
+<!-- Curva TIP (Shorrocks, 1995; Jenkins and Lambert, 1997) (*tip*) | Curva de Lorenz Generalizada (*lc*)   -->
+
+<!-- Para su cálculo la información se obtiene de las encuestas EU-SILC (European Union Statistics on Income and Living Conditions) proporcionadas por Eurostat, y de las Encuestas de Condiciones de Vida (ECV) proporcionadas por el INE. -->
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-10">
+  <hgroup>
+    <h2>La curva TIP</h2>
+  </hgroup>
+  <article>
+    <p>Dada una distribución de renta $X$ y fijado un umbral de pobreza $z&gt;0$, la curva TIP (Three I&#39;s of Poverty), denotada por $tip(p,z)$, donde $0 \leq p \leq 1$, porporciona para cada $p$, el acumulado de las brechas de pobreza per cápita del $100p \%$ de los individuos más pobres.</p>
+
+<pre><code class="r">tip(Andalucia, arpt.value = arpt(Andalucia), norm = FALSE, plot = TRUE)
+</code></pre>
+  
+    <div class='left' style='float:left;width:48%'>
+     <p><img src="assets/fig/unnamed-chunk-10-1.png" alt="plot of chunk unnamed-chunk-10"></p>
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <p>Así, para una población de $n$ individuos tales que $x<em>1 \le x_2 \le \cdots \le x_n$ se tiene
+$$
+tip \left( \frac{i}{n},z \right) = \sum</em>{j = 1}<sup>i</sup> \frac{(z-x<em>j)</em>{+}}{n}
+$$
+para $i=1,2, \dots n$ y donde $a_{+} = \max { 0, a }$ [@Jenkins1997].</p>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-11">
+  <hgroup>
+    <h2>Test para la dominancia TIP</h2>
+  </hgroup>
+  <article>
+    <p>Dadas dos distribuciones de renta $A$ y $B$ y un umbral de pobreza $z&gt;0$,  diremos que la curva TIP A domina a la curva TIP B, si se verifica </p>
+
+<p>$$
+tip_A(p,z) \geq tip_B(p,z), \,\, 0 \leq p \leq 1 
+$$</p>
+  
+    <div class='left' style='float:left;width:48%'>
+     <p><img src="assets/fig/unnamed-chunk-11-1.png" alt="plot of chunk unnamed-chunk-11"></p>
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <p>¿Realmente la curva TIP de Andalucía domina a la de Castilla-La Mancha?</p>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>Test para la dominancia TIP [@XuOsberg1998]</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>¿Realmentela curva TIP de Andalucía domina a la de Castilla-La Mancha?</p>
+
+<pre><code class="r">testTIP(Andalucia, Castilla_La_Mancha, pz = 0.6, same.arpt.value = arpt(ESP),
+        norm = FALSE, samplesize = 50)
+</code></pre>
+
+<pre><code>## $Tvalue
+##              [,1]
+## [1,] 5.391962e-07
+## 
+## $p.value
+## [1] NA
+## 
+## $decision
+## [1] &quot;Do not reject null hypothesis&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>Test para la dominancia TIP [@XuOsberg1998]</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>¿Realmentela curva TIP de Andalucía domina a la de Castilla-La Mancha? </p>
+
+<pre><code class="r">testTIP(Castilla_La_Mancha, Andalucia, same.arpt.value = arpt(ESP))
+</code></pre>
+
+<pre><code>## $Tvalue
+##          [,1]
+## [1,] 16771.31
+## 
+## $p.value
+## [1] NA
+## 
+## $decision
+## [1] &quot;Reject null hypothesis&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-14">
+  <hgroup>
+    <h2>Test para la dominancia TIP</h2>
+  </hgroup>
+  <article>
+    <p>¿Qué sucede cuando usamos umbrales de pobreza diferentes en ambas distribuciones? </p>
+  
+    <div class='left' style='float:left;width:48%'>
+     <p><img src="assets/fig/unnamed-chunk-14-1.png" alt="plot of chunk unnamed-chunk-14"></p>
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <p>¿Realmente la curva TIP de Andalucía domina a la de Castilla-La Mancha?</p>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-15" style="background:;">
+  <hgroup>
+    <h2>Test para la dominancia TIP [@XuOsberg1998]</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>¿Qué sucede cuando usamos umbrales de pobreza diferentes en ambas distribuciones? </p>
+
+<pre><code class="r">testTIP(Andalucia, Castilla_La_Mancha, pz = 0.6, norm = TRUE, samplesize = 50)
+</code></pre>
+
+<pre><code>## $Tvalue
+##              [,1]
+## [1,] 4.546547e-11
+## 
+## $p.value
+## [1] NA
+## 
+## $decision
+## [1] &quot;Do not reject null hypothesis&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-16" style="background:;">
+  <hgroup>
+    <h2>Test para la dominancia TIP [@XuOsberg1998]</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>¿Qué sucede cuando usamos umbrales de pobreza diferentes en ambas distribuciones? </p>
+
+<pre><code class="r">testTIP(Castilla_La_Mancha, Andalucia, norm = TRUE)
+</code></pre>
+
+<pre><code>## $Tvalue
+##          [,1]
+## [1,] 2675.343
+## 
+## $p.value
+## [1] NA
+## 
+## $decision
+## [1] &quot;Reject null hypothesis&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-17" style="background:;">
+  <hgroup>
+    <h2>Apéndice</h2>
+  </hgroup>
+  <article data-timings="">
+    <h2>Cómo dibujar varias curvas TIP</h2>
+
+<pre><code class="r">ggplot(data = ES61, aes(x.tip,y.tip, color=&quot;ES61&quot;)) + 
+  geom_line() + 
+  geom_line(data = ES42, aes(x.tip, y.tip, color = &quot;ES42&quot;)) +
+  geom_line(data = ES22, aes(x.tip, y.tip, color = &quot;ES22&quot;)) +
+  scale_x_continuous(&quot;Cumulated proportion of population&quot;) +
+  scale_y_continuous(&quot;&quot;) +
+  scale_color_discrete(labels = c(&quot;Navarra&quot;, &quot;Castilla - La Mancha&quot;, &quot;Andalucía&quot;), name=&quot;Regiones&quot;) + theme(legend.justification=c(1,0), legend.position=c(1,0))
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-18" style="background:;">
+  <hgroup>
+    <h2>Cómo dibujar Varias curvas Lorenz</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">require(reshape2)
+require(ggplot2)
+ES61 &lt;- lc(Andalucia, samp = 10, generalized = FALSE, plot = FALSE)
+ES42 &lt;- lc(Castilla_La_Mancha)
+ES22 &lt;- lc(Navarra)
+data_regions &lt;- data.frame(x = ES61$x.lg, 
+                           ES61 = ES61$y.lg, 
+                           ES42 = ES42$y.lg,
+                           ES22 = ES22$y.lg)
+dataset &lt;- melt(data_regions, id = &quot;x&quot;)
+ggplot(data = dataset, aes(x,value, color=variable)) + 
+  geom_line() + 
+  geom_segment(aes(x = 0, y = 0, xend = 1, yend = 1),
+               linetype = &quot;longdash&quot;, color = &quot;grey&quot;) +
+  scale_x_continuous(&quot;Cumulated proportion of population&quot;) +
+  scale_y_continuous(&quot;&quot;) +
+  scale_color_discrete(labels = c(&quot;Andalucía&quot;,&quot;Castilla - La Mancha&quot;,&quot;Navarra&quot;), name=&quot;Regiones&quot;) +
+theme(legend.justification=c(1,0), legend.position=c(1,0))
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-19" style="background:;">
+  <hgroup>
+    <h2>Tests para curvas Lorenz [@Xu1997]</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>¿Domina la curva de Lorenz para Andalucía a la de Castilla - La Mancha?</p>
+
+<pre><code class="r">testGL(Andalucia, Castilla_La_Mancha, generalized = TRUE, samplesize = 10)
+</code></pre>
+
+<pre><code>## $Tvalue
+##         [,1]
+## [1,] 26843.9
+## 
+## $p.value
+## [1] NA
+## 
+## $decision
+## [1] &quot;Reject null hypothesis&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-20" style="background:;">
+  <hgroup>
+    <h2>Tests para curvas Lorenz [@Xu1997]</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>¿Domina la curva de Lorenz para Castilla - La Mancha a la de Andalucía?</p>
+
+<pre><code class="r">testGL(Castilla_La_Mancha, Andalucia, generalized = TRUE, samplesize = 10)
+</code></pre>
+
+<pre><code>## $Tvalue
+##              [,1]
+## [1,] 1.605208e-06
+## 
+## $p.value
+## [1] NA
+## 
+## $decision
+## [1] &quot;Do not reject null hypothesis&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-21" style="background:;">
+  <hgroup>
+    <h2>Bibliografía</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Introducción'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Introducción'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Introducción'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Instalación del paquete'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Carga de datos'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Carga de datos'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Indicadores de pobreza'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Indicadores de pobreza'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Indicadores de pobreza'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='La curva TIP'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Test para la dominancia TIP'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='Test para la dominancia TIP [@XuOsberg1998]'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Test para la dominancia TIP [@XuOsberg1998]'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='Test para la dominancia TIP'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='Test para la dominancia TIP [@XuOsberg1998]'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='Test para la dominancia TIP [@XuOsberg1998]'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='Apéndice'>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title='Cómo dibujar Varias curvas Lorenz'>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='Tests para curvas Lorenz [@Xu1997]'>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='Tests para curvas Lorenz [@Xu1997]'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='Bibliografía'>
+         21
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
