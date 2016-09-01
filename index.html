@@ -42,13 +42,11 @@
 
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Introducción</h2>
+  </hgroup>
   <article data-timings="">
-    <pre><code>## Loading required package: knitcitations
-</code></pre>
-
-<h2>Introducción</h2>
-
-<h3>Justificación</h3>
+    <h3>Justificación</h3>
 
 <p>Proyecto: Desigualdad y pobreza en Andalucía: un estudio    comparativo con los países de la Unión Europea (2005-2010), PRY103/12, Centro de Estudios Andaluces (aprobado en la 8.ª edición de la Convocatoria Pública de Proyectos de Investigación en el año 2012 de la Fundación Centro de Estudios Andaluces). </p>
 
@@ -185,18 +183,6 @@ devtools::install_github(&quot;AngelBerihuete/rtip&quot;)
 <pre><code class="r">library(rtip)
 </code></pre>
 
-<pre><code>## Loading required package: ggplot2
-</code></pre>
-
-<pre><code>## Loading required package: boot
-</code></pre>
-
-<pre><code>## Loading required package: mvtnorm
-</code></pre>
-
-<pre><code>## Loading required package: plyr
-</code></pre>
-
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -305,7 +291,7 @@ head(Navarra, 3)
 ## 
 ## Intervals : 
 ## Level      Basic         
-## 95%   (5761, 6349 )  
+## 95%   (5748, 6347 )  
 ## Calculations and Intervals on Original Scale
 </code></pre>
 
@@ -387,7 +373,7 @@ head(Navarra, 3)
 </code></pre>
   
     <div class='left' style='float:left;width:48%'>
-     <p><img src="figure/unnamed-chunk-11-1.png" alt="plot of chunk unnamed-chunk-11"></p>
+     <p><img src="assets/fig/unnamed-chunk-11-1.png" alt="plot of chunk unnamed-chunk-11"></p>
 
     </div>    
     <div class='right' style='float:right;width:48%'>
@@ -412,7 +398,7 @@ tip_A(p,z) \geq tip_B(p,z), \,\, 0 \leq p \leq 1
 $$</p>
   
     <div class='left' style='float:left;width:48%'>
-     <p><img src="figure/unnamed-chunk-12-1.png" alt="plot of chunk unnamed-chunk-12"></p>
+     <p><img src="assets/fig/unnamed-chunk-12-1.png" alt="plot of chunk unnamed-chunk-12"></p>
 
     </div>    
     <div class='right' style='float:right;width:48%'>
@@ -480,7 +466,7 @@ $$</p>
     <p>¿Qué sucede cuando usamos umbrales de pobreza diferentes en ambas distribuciones? </p>
   
     <div class='left' style='float:left;width:48%'>
-     <p><img src="figure/unnamed-chunk-15-1.png" alt="plot of chunk unnamed-chunk-15"></p>
+     <p><img src="assets/fig/unnamed-chunk-15-1.png" alt="plot of chunk unnamed-chunk-15"></p>
 
     </div>    
     <div class='right' style='float:right;width:48%'>
@@ -595,6 +581,9 @@ theme(legend.justification=c(1,0), legend.position=c(1,0))
   <article data-timings="">
     <p>¿Domina la curva de Lorenz para Andalucía a la de Castilla - La Mancha?</p>
 
+<pre><code class="r">testGL(Andalucia, Castilla_La_Mancha, generalized = TRUE, samplesize = 10)
+</code></pre>
+
 <pre><code>## $Tvalue
 ##         [,1]
 ## [1,] 26843.9
@@ -617,6 +606,9 @@ theme(legend.justification=c(1,0), legend.position=c(1,0))
   <article data-timings="">
     <p>¿Domina la curva de Lorenz para Castilla - La Mancha a la de Andalucía?</p>
 
+<pre><code class="r">testGL(Castilla_La_Mancha, Andalucia, generalized = TRUE, samplesize = 10)
+</code></pre>
+
 <pre><code>## $Tvalue
 ##              [,1]
 ## [1,] 1.605208e-06
@@ -637,7 +629,13 @@ theme(legend.justification=c(1,0), legend.position=c(1,0))
     <h2>Bibliografía</h2>
   </hgroup>
   <article data-timings="">
-    <pre><code>## Error in .BibEntry_match_format_style(style): &#39;style&#39; should be one of &quot;text&quot;, &quot;Bibtex&quot;, &quot;citation&quot;, &quot;html&quot;, &quot;latex&quot;, &quot;textVersion&quot;, &quot;R&quot;, &quot;Biblatex&quot;, &quot;markdown&quot;, &quot;yaml&quot;
+    <pre><code class="r">bibliography(style = &quot;text&quot;)
+</code></pre>
+
+<pre><code>## [1] A. Alfons and M. Templ. &quot;Estimation of Social Exclusion
+## Indicators from Complex Surveys: The R Package laeken&quot;. In:
+## _Journal of Statistical Software_ 54.15 (2013), pp. 1-25. &lt;URL:
+## http://www.jstatsoft.org/v54/i15/&gt;.
 </code></pre>
 
   </article>
@@ -650,7 +648,7 @@ theme(legend.justification=c(1,0), legend.position=c(1,0))
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='NA'>
+        data-slide=1 title='Introducción'>
          1
       </a>
     </li>

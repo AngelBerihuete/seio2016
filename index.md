@@ -16,9 +16,6 @@ knit        : slidify::knit2slides
 
 
 
-```
-## Loading required package: knitcitations
-```
 
 
 ## Introducción
@@ -105,22 +102,6 @@ Una vez instalado basta ejecutar
 
 ```r
 library(rtip)
-```
-
-```
-## Loading required package: ggplot2
-```
-
-```
-## Loading required package: boot
-```
-
-```
-## Loading required package: mvtnorm
-```
-
-```
-## Loading required package: plyr
 ```
 
 ---
@@ -225,7 +206,7 @@ arpt(Andalucia, pz = 0.6, ci = TRUE, rep = 1000, verbose = FALSE)
 ## 
 ## Intervals : 
 ## Level      Basic         
-## 95%   (5761, 6349 )  
+## 95%   (5748, 6347 )  
 ## Calculations and Intervals on Original Scale
 ```
 
@@ -268,7 +249,7 @@ tip(Andalucia, arpt.value = arpt(Andalucia), norm = FALSE, plot = TRUE)
 ```
 
 *** =left
-![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11-1.png)
+![plot of chunk unnamed-chunk-11](assets/fig/unnamed-chunk-11-1.png)
 
 *** =right
 Así, para una población de $n$ individuos tales que $x_1 \le x_2 \le \cdots \le x_n$ se tiene
@@ -289,7 +270,7 @@ $$
 
 *** =left
 
-![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12-1.png)
+![plot of chunk unnamed-chunk-12](assets/fig/unnamed-chunk-12-1.png)
 
 *** =right
 
@@ -351,7 +332,7 @@ testTIP(Castilla_La_Mancha, Andalucia, same.arpt.value = arpt(ESP))
 
 *** =left
 
-![plot of chunk unnamed-chunk-15](figure/unnamed-chunk-15-1.png)
+![plot of chunk unnamed-chunk-15](assets/fig/unnamed-chunk-15-1.png)
 
 *** =right
 ¿Realmente la curva TIP de Andalucía domina a la de Castilla-La Mancha?
@@ -455,6 +436,10 @@ theme(legend.justification=c(1,0), legend.position=c(1,0))
 ¿Domina la curva de Lorenz para Andalucía a la de Castilla - La Mancha?
 
 
+```r
+testGL(Andalucia, Castilla_La_Mancha, generalized = TRUE, samplesize = 10)
+```
+
 ```
 ## $Tvalue
 ##         [,1]
@@ -473,6 +458,10 @@ theme(legend.justification=c(1,0), legend.position=c(1,0))
 
 ¿Domina la curva de Lorenz para Castilla - La Mancha a la de Andalucía?
 
+
+```r
+testGL(Castilla_La_Mancha, Andalucia, generalized = TRUE, samplesize = 10)
+```
 
 ```
 ## $Tvalue
@@ -493,7 +482,14 @@ theme(legend.justification=c(1,0), legend.position=c(1,0))
 
 
 
+```r
+bibliography(style = "text")
 ```
-## Error in .BibEntry_match_format_style(style): 'style' should be one of "text", "Bibtex", "citation", "html", "latex", "textVersion", "R", "Biblatex", "markdown", "yaml"
+
+```
+## [1] A. Alfons and M. Templ. "Estimation of Social Exclusion
+## Indicators from Complex Surveys: The R Package laeken". In:
+## _Journal of Statistical Software_ 54.15 (2013), pp. 1-25. <URL:
+## http://www.jstatsoft.org/v54/i15/>.
 ```
 
