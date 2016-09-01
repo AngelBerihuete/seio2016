@@ -10,16 +10,19 @@ hitheme     : tomorrow      #
 widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
-bibliography: rtip.bib
-csl: annual-review-of-statistics-and-its-application.csl
 ---
 
 
 
 
+
+```
+## Loading required package: knitcitations
+```
+
+
 ## Introducción
 ### Justificación
-
 Proyecto: Desigualdad y pobreza en Andalucía: un estudio    comparativo con los países de la Unión Europea (2005-2010), PRY103/12, Centro de Estudios Andaluces (aprobado en la 8.ª edición de la Convocatoria Pública de Proyectos de Investigación en el año 2012 de la Fundación Centro de Estudios Andaluces). 
 
 Equipo de investigación: M.A. Sordo Díaz (Coord.),  A. Berihuete Macías y C.D. Ramos González. 
@@ -59,7 +62,7 @@ Para su cálculo la información se obtiene de las encuestas EU-SILC (European U
 
 > __IC2__ :  Inequality and Concentration Indices and Curves (C. SGini, C. Lorenz y Lorenz Generalizada)
 
-> __laeken__[@Alfons2013]: Estimation of indicators on social exclusion and poverty (*arpt*, *arpr*, *rmpg*, *qsr*, *gini*).
+> __laeken__ Alfons and Templ (2013): Estimation of indicators on social exclusion and poverty (*arpt*, *arpr*, *rmpg*, *qsr*, *gini*).
 
 <!-- ¿En __STATA__, los módulos: -->
 <!-- * __svylorenz__ : derives distribution-free variance estimates from complex survey data, of quantile group shares of a total, cumulative quantile group shares -->
@@ -102,6 +105,22 @@ Una vez instalado basta ejecutar
 
 ```r
 library(rtip)
+```
+
+```
+## Loading required package: ggplot2
+```
+
+```
+## Loading required package: boot
+```
+
+```
+## Loading required package: mvtnorm
+```
+
+```
+## Loading required package: plyr
 ```
 
 ---
@@ -206,7 +225,7 @@ arpt(Andalucia, pz = 0.6, ci = TRUE, rep = 1000, verbose = FALSE)
 ## 
 ## Intervals : 
 ## Level      Basic         
-## 95%   (5761, 6348 )  
+## 95%   (5761, 6349 )  
 ## Calculations and Intervals on Original Scale
 ```
 
@@ -249,7 +268,7 @@ tip(Andalucia, arpt.value = arpt(Andalucia), norm = FALSE, plot = TRUE)
 ```
 
 *** =left
-![plot of chunk unnamed-chunk-10](assets/fig/unnamed-chunk-10-1.png)
+![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11-1.png)
 
 *** =right
 Así, para una población de $n$ individuos tales que $x_1 \le x_2 \le \cdots \le x_n$ se tiene
@@ -270,7 +289,7 @@ $$
 
 *** =left
 
-![plot of chunk unnamed-chunk-11](assets/fig/unnamed-chunk-11-1.png)
+![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12-1.png)
 
 *** =right
 
@@ -332,7 +351,7 @@ testTIP(Castilla_La_Mancha, Andalucia, same.arpt.value = arpt(ESP))
 
 *** =left
 
-![plot of chunk unnamed-chunk-14](assets/fig/unnamed-chunk-14-1.png)
+![plot of chunk unnamed-chunk-15](figure/unnamed-chunk-15-1.png)
 
 *** =right
 ¿Realmente la curva TIP de Andalucía domina a la de Castilla-La Mancha?
@@ -436,10 +455,6 @@ theme(legend.justification=c(1,0), legend.position=c(1,0))
 ¿Domina la curva de Lorenz para Andalucía a la de Castilla - La Mancha?
 
 
-```r
-testGL(Andalucia, Castilla_La_Mancha, generalized = TRUE, samplesize = 10)
-```
-
 ```
 ## $Tvalue
 ##         [,1]
@@ -459,10 +474,6 @@ testGL(Andalucia, Castilla_La_Mancha, generalized = TRUE, samplesize = 10)
 ¿Domina la curva de Lorenz para Castilla - La Mancha a la de Andalucía?
 
 
-```r
-testGL(Castilla_La_Mancha, Andalucia, generalized = TRUE, samplesize = 10)
-```
-
 ```
 ## $Tvalue
 ##              [,1]
@@ -479,3 +490,10 @@ testGL(Castilla_La_Mancha, Andalucia, generalized = TRUE, samplesize = 10)
 ---
 
 ## Bibliografía
+
+
+
+```
+## Error in .BibEntry_match_format_style(style): 'style' should be one of "text", "Bibtex", "citation", "html", "latex", "textVersion", "R", "Biblatex", "markdown", "yaml"
+```
+

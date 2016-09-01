@@ -42,11 +42,13 @@
 
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
-  <hgroup>
-    <h2>Introducción</h2>
-  </hgroup>
   <article data-timings="">
-    <h3>Justificación</h3>
+    <pre><code>## Loading required package: knitcitations
+</code></pre>
+
+<h2>Introducción</h2>
+
+<h3>Justificación</h3>
 
 <p>Proyecto: Desigualdad y pobreza en Andalucía: un estudio    comparativo con los países de la Unión Europea (2005-2010), PRY103/12, Centro de Estudios Andaluces (aprobado en la 8.ª edición de la Convocatoria Pública de Proyectos de Investigación en el año 2012 de la Fundación Centro de Estudios Andaluces). </p>
 
@@ -124,7 +126,7 @@
 
 <p><strong>IC2</strong> :  Inequality and Concentration Indices and Curves (C. SGini, C. Lorenz y Lorenz Generalizada)</p>
 
-<p><strong>laeken</strong>[@Alfons2013]: Estimation of indicators on social exclusion and poverty (<em>arpt</em>, <em>arpr</em>, <em>rmpg</em>, <em>qsr</em>, <em>gini</em>).</p>
+<p><strong>laeken</strong> Alfons and Templ (2013): Estimation of indicators on social exclusion and poverty (<em>arpt</em>, <em>arpr</em>, <em>rmpg</em>, <em>qsr</em>, <em>gini</em>).</p>
 </blockquote>
 
 <!-- ¿En __STATA__, los módulos: -->
@@ -181,6 +183,18 @@ devtools::install_github(&quot;AngelBerihuete/rtip&quot;)
 <p>Una vez instalado basta ejecutar </p>
 
 <pre><code class="r">library(rtip)
+</code></pre>
+
+<pre><code>## Loading required package: ggplot2
+</code></pre>
+
+<pre><code>## Loading required package: boot
+</code></pre>
+
+<pre><code>## Loading required package: mvtnorm
+</code></pre>
+
+<pre><code>## Loading required package: plyr
 </code></pre>
 
   </article>
@@ -291,7 +305,7 @@ head(Navarra, 3)
 ## 
 ## Intervals : 
 ## Level      Basic         
-## 95%   (5761, 6348 )  
+## 95%   (5761, 6349 )  
 ## Calculations and Intervals on Original Scale
 </code></pre>
 
@@ -373,7 +387,7 @@ head(Navarra, 3)
 </code></pre>
   
     <div class='left' style='float:left;width:48%'>
-     <p><img src="assets/fig/unnamed-chunk-10-1.png" alt="plot of chunk unnamed-chunk-10"></p>
+     <p><img src="figure/unnamed-chunk-11-1.png" alt="plot of chunk unnamed-chunk-11"></p>
 
     </div>    
     <div class='right' style='float:right;width:48%'>
@@ -398,7 +412,7 @@ tip_A(p,z) \geq tip_B(p,z), \,\, 0 \leq p \leq 1
 $$</p>
   
     <div class='left' style='float:left;width:48%'>
-     <p><img src="assets/fig/unnamed-chunk-11-1.png" alt="plot of chunk unnamed-chunk-11"></p>
+     <p><img src="figure/unnamed-chunk-12-1.png" alt="plot of chunk unnamed-chunk-12"></p>
 
     </div>    
     <div class='right' style='float:right;width:48%'>
@@ -466,7 +480,7 @@ $$</p>
     <p>¿Qué sucede cuando usamos umbrales de pobreza diferentes en ambas distribuciones? </p>
   
     <div class='left' style='float:left;width:48%'>
-     <p><img src="assets/fig/unnamed-chunk-14-1.png" alt="plot of chunk unnamed-chunk-14"></p>
+     <p><img src="figure/unnamed-chunk-15-1.png" alt="plot of chunk unnamed-chunk-15"></p>
 
     </div>    
     <div class='right' style='float:right;width:48%'>
@@ -581,9 +595,6 @@ theme(legend.justification=c(1,0), legend.position=c(1,0))
   <article data-timings="">
     <p>¿Domina la curva de Lorenz para Andalucía a la de Castilla - La Mancha?</p>
 
-<pre><code class="r">testGL(Andalucia, Castilla_La_Mancha, generalized = TRUE, samplesize = 10)
-</code></pre>
-
 <pre><code>## $Tvalue
 ##         [,1]
 ## [1,] 26843.9
@@ -606,9 +617,6 @@ theme(legend.justification=c(1,0), legend.position=c(1,0))
   <article data-timings="">
     <p>¿Domina la curva de Lorenz para Castilla - La Mancha a la de Andalucía?</p>
 
-<pre><code class="r">testGL(Castilla_La_Mancha, Andalucia, generalized = TRUE, samplesize = 10)
-</code></pre>
-
 <pre><code>## $Tvalue
 ##              [,1]
 ## [1,] 1.605208e-06
@@ -629,7 +637,9 @@ theme(legend.justification=c(1,0), legend.position=c(1,0))
     <h2>Bibliografía</h2>
   </hgroup>
   <article data-timings="">
-    
+    <pre><code>## Error in .BibEntry_match_format_style(style): &#39;style&#39; should be one of &quot;text&quot;, &quot;Bibtex&quot;, &quot;citation&quot;, &quot;html&quot;, &quot;latex&quot;, &quot;textVersion&quot;, &quot;R&quot;, &quot;Biblatex&quot;, &quot;markdown&quot;, &quot;yaml&quot;
+</code></pre>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -640,7 +650,7 @@ theme(legend.justification=c(1,0), legend.position=c(1,0))
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Introducción'>
+        data-slide=1 title='NA'>
          1
       </a>
     </li>
