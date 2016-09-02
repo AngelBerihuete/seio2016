@@ -10,12 +10,16 @@ hitheme     : tomorrow      #
 widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
+bibliography: rtip.bib
 ---
 
 
 
 
 
+```
+## Error in BibOptions(check.entries = check.entries, style = style, hyperlink = hyperlink, : Invalid name specified, see ?BibOptions
+```
 
 
 ## Introducción
@@ -483,7 +487,7 @@ testGL(Castilla_La_Mancha, Andalucia, generalized = TRUE, samplesize = 10)
 
 
 ```r
-bibliography(style = "text")
+bibliography()
 ```
 
 ```
