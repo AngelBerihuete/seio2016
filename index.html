@@ -367,7 +367,7 @@ head(Navarra, 3)
     <h2>La curva TIP</h2>
   </hgroup>
   <article>
-    <p>Dada una distribución de renta \(X\) y fijado un umbral de pobreza \(z>0\), la curva TIP (Three I&#39;s of Poverty), denotada por \(tip(p,z)\), donde \(0 \leq p \leq 1\), porporciona para cada \(p\), el acumulado de las brechas de pobreza per cápita del \(100p \%\) de los individuos más pobres.</p>
+    <p>Dada una distribución de renta $X$ y fijado un umbral de pobreza $z&gt;0$, la curva TIP (Three I&#39;s of Poverty), denotada por $tip(p,z)$, donde $0 \leq p \leq 1$, porporciona para cada $p$, el acumulado de las brechas de pobreza per cápita del $100p \%$ de los individuos más pobres.</p>
 
 <pre><code class="r">tip(Andalucia, arpt.value = arpt(Andalucia), norm = FALSE, plot = TRUE)
 </code></pre>
@@ -377,11 +377,11 @@ head(Navarra, 3)
 
     </div>    
     <div class='right' style='float:right;width:48%'>
-     <p>Así, para una población de \(n\) individuos tales que \(x_1 \le x_2 \le \cdots \le x_n\) se tiene
-\[
-tip \left( \frac{i}{n},z \right) = \sum_{j = 1}^i \frac{(z-x_j)_{+}}{n}
-\]
-para \(i=1,2, \dots n\) y donde \(a_{+} = \max \{ 0, a \}\) [@Jenkins1997].</p>
+     <p>Así, para una población de $n$ individuos tales que $x<em>1 \le x_2 \le \cdots \le x_n$ se tiene
+$$
+tip \left( \frac{i}{n},z \right) = \sum</em>{j = 1}<sup>i</sup> \frac{(z-x<em>j)</em>{+}}{n}
+$$
+para $i=1,2, \dots n$ y donde $a_{+} = \max { 0, a }$ [@Jenkins1997].</p>
 
     </div>
   </article>
@@ -391,11 +391,11 @@ para \(i=1,2, \dots n\) y donde \(a_{+} = \max \{ 0, a \}\) [@Jenkins1997].</p>
     <h2>Test para la dominancia TIP</h2>
   </hgroup>
   <article>
-    <p>Dadas dos distribuciones de renta \(A\) y \(B\) y un umbral de pobreza \(z>0\),  diremos que la curva TIP A domina a la curva TIP B, si se verifica </p>
+    <p>Dadas dos distribuciones de renta $A$ y $B$ y un umbral de pobreza $z&gt;0$,  diremos que la curva TIP A domina a la curva TIP B, si se verifica </p>
 
-<p>\[
+<p>$$
 tip_A(p,z) \geq tip_B(p,z), \,\, 0 \leq p \leq 1 
-\]</p>
+$$</p>
   
     <div class='left' style='float:left;width:48%'>
      <p><img src="assets/fig/unnamed-chunk-12-1.png" alt="plot of chunk unnamed-chunk-12"></p>
