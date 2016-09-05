@@ -1,30 +1,25 @@
 ---
-title       : "rtip: paquete para el análisis de la pobreza y la desigualdad"
-subtitle    : "XXXVI Congreso Nacional de la SEIO"
-author      : "C.D. Ramos, A. Berihuete, M.A. Sordo"
-#logo        : LogoUCA.png
-duration    : 17
-framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
-highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow      # 
-widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
-mode        : selfcontained # {standalone, draft}
-knit        : slidify::knit2slides
-bibliography: rtip.bib
+title: 'rtip: paquete para el análisis de la pobreza y la desigualdad'
+subtitle: "XXXVI Congreso Nacional de la SEIO"
+author: "C.D. Ramos, A. Berihuete, M.A. Sordo"
+output: ioslides_presentation
+framework: io2012
+hitheme: tomorrow
+highlighter: highlight.js
+knit: slidify::knit2slides
+mode: selfcontained
+duration: 17
+widgets: [mathjax]
 ---
 
 
 
 
 
-```
-## Error in BibOptions(check.entries = check.entries, style = style, hyperlink = hyperlink, : Invalid name specified, see ?BibOptions
-```
-
 
 ## Introducción
 ### Justificación
-Proyecto: Desigualdad y pobreza en Andalucía: un estudio    comparativo con los países de la Unión Europea (2005-2010), PRY103/12, Centro de Estudios Andaluces (aprobado en la 8.ª edición de la Convocatoria Pública de Proyectos de Investigación en el año 2012 de la Fundación Centro de Estudios Andaluces). 
+Proyecto: Desigualdad y pobreza en Andalucía: un estudio comparativo con los países de la Unión Europea (2005-2010), PRY103/12, Centro de Estudios Andaluces (aprobado en la 8.ª edición de la Convocatoria Pública de Proyectos de Investigación en el año 2012 de la Fundación Centro de Estudios Andaluces). 
 
 Equipo de investigación: M.A. Sordo Díaz (Coord.),  A. Berihuete Macías y C.D. Ramos González. 
 
@@ -63,7 +58,9 @@ Para su cálculo la información se obtiene de las encuestas EU-SILC (European U
 
 > __IC2__ :  Inequality and Concentration Indices and Curves (C. SGini, C. Lorenz y Lorenz Generalizada)
 
-> __laeken__ Alfons and Templ (2013): Estimation of indicators on social exclusion and poverty (*arpt*, *arpr*, *rmpg*, *qsr*, *gini*).
+> __laeken__ : Estimation of indicators on social exclusion and poverty (*arpt*, *arpr*, *rmpg*, *qsr*, *gini*). Ver Alfons and Templ (2013)
+
+
 
 <!-- ¿En __STATA__, los módulos: -->
 <!-- * __svylorenz__ : derives distribution-free variance estimates from complex survey data, of quantile group shares of a total, cumulative quantile group shares -->
@@ -479,21 +476,11 @@ testGL(Castilla_La_Mancha, Andalucia, generalized = TRUE, samplesize = 10)
 ## [1] "Do not reject null hypothesis"
 ```
 
-
 ---
 
-## Bibliografía
+## References
 
-
-
-```r
-bibliography()
-```
-
-```
-## [1] A. Alfons and M. Templ. "Estimation of Social Exclusion
-## Indicators from Complex Surveys: The R Package laeken". In:
-## _Journal of Statistical Software_ 54.15 (2013), pp. 1-25. <URL:
-## http://www.jstatsoft.org/v54/i15/>.
-```
-
+[1] A. Alfons and M. Templ. "Estimation of Social Exclusion
+Indicators from Complex Surveys: The R Package laeken". In:
+_Journal of Statistical Software_ 54.15 (2013), pp. 1-25. <URL:
+http://www.jstatsoft.org/v54/i15/>.
