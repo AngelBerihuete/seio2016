@@ -2,13 +2,10 @@
 title: 'rtip: paquete para el análisis de la pobreza y la desigualdad'
 subtitle: "XXXVI Congreso Nacional de la SEIO"
 author: "C.D. Ramos, A. Berihuete, M.A. Sordo"
-output: ioslides_presentation
 framework: io2012
 hitheme: tomorrow
 highlighter: highlight.js
-knit: slidify::knit2slides
 mode: selfcontained
-duration: 17
 widgets: [mathjax]
 ---
 
@@ -44,11 +41,11 @@ Las conclusiones del estudio realizado se recogen en las publicaciones:
 ### Indicadores y curvas proporcionadas por rtip 
 
 Análisis Pobreza | Análisis Desigualdad
------------------------------------------ | ------------------------------ 
+---------------------------------------------- | ------------------------------ 
 Umbral de riesgo de pobreza (*arpt*)  | Coeficiente de Gini (*gini*) | miuc
 Tasa de riesgo de pobreza (*arpr*)    | Ratio de quintiles, S80/S20 (*qsr*) 
 Desfase relativo de la renta mediana de la población en riesgo de pobreza (*rmpg*)      | Curva de Lorenz (*lc*)     
-Índice FGT(1) (Foster, Greer, and Thorbecke, 1984) (*s1*)                      | __Análisis Bienestar__
+Índice FGT(1) (Foster, Greer, and Thorbecke, 1984) (*s1*)                      | <div class="bg-olive"> ANÁLISIS DE BIENESTAR </div>
 Índice SST (Shorrocks, 1995) (*s2*) | Rentas medias por hogar, persona y u.c. (*mih*, *mip*, *miuc*)
 Curva TIP (Shorrocks, 1995; Jenkins and Lambert, 1997) (*tip*) | Curva de Lorenz Generalizada (*lc*) 
 
@@ -156,9 +153,13 @@ tip(Castilla_LaMancha, arpt.value = arpt(Castilla_LaMancha), norm = FALSE, plot 
 *** =right
 Así, para una población de $n$ individuos tales que $x_1 \le x_2 \le \cdots \le x_n$ se tiene
 
-$$tip \left( \frac{i}{n},z \right) = \sum_{j = 1}^i \frac{(z-x_j)_{+}}{n}$$
+<div>
+$$tip \left( \frac{i}{n},z \right) = \sum_{j=1}^i \frac{(z-x_j)_{+}}{n} $$
+</div>
 
-para $i=1,2, \dots n$ y donde $a_{+} = \max \{ 0, a \}$ (Jenkins and Lambert, 1997).
+para $i=1,2, \dots n$ y donde $a_{+}=$ max{0,a}.
+
+(Jenkins and Lambert, 1997)
 
 ---&twocol
 
@@ -248,10 +249,26 @@ _Econometrica_ 63.5 (1995), pp. 1225-1230.
 Dominance". In: _Econometric Reviews_ 17.4 (1998), pp. 415-429.
 
 ---
+
+## Referencias
+
+A. Berihuete, C. D. Ramos and M. A. Sordo. rtip: Inequality, Welfare and Poverty Indices and Curves using the EU-SILC Data. R package version 1.0.0. 2016. 
+
+J. Foster, J. Greer and E. Thorbecke. "A Class of Decomposable Poverty Measures". In: Econometrica 52.3 (1984), pp. 761-766. 
+
+S. Jenkins and P. J. Lambert. "Three 'I's of Poverty Curves, with an Analysis of UK Poverty Trends". In: Oxford Economic Papers 49.3 (1997), pp. 317-27. 
+
+A. F. Shorrocks. "Revisiting the Sen Poverty Index". In: Econometrica 63.5 (1995), pp. 1225-1230. 
+
+K. Xu and L. Osberg. "A Distribution-free Test for Deprivation Dominance". In: Econometric Reviews 17.4 (1998), pp. 415-429.
+
+---
 ## Muchas gracias por su atención
 
 carmen.ramos@uca.es
 
 angel.berihuete@uca.es
+
+mangel.sordo@uca.es
 
 <https://github.com/AngelBerihuete/rtip>

@@ -93,39 +93,44 @@
 <tr>
 <th>Análisis Pobreza</th>
 <th>Análisis Desigualdad</th>
+<th>Análisis Bienestar</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>Umbral de riesgo de pobreza (<em>arpt</em>)</td>
 <td>Coeficiente de Gini (<em>gini</em>)</td>
+<td>Rentas medias por hogar, persona y u.c. (<em>mih</em>, <em>mip</em>, <em>miuc</em>)</td>
 </tr>
 <tr>
 <td>Tasa de riesgo de pobreza (<em>arpr</em>)</td>
 <td>Ratio de quintiles, S80/S20 (<em>qsr</em>)</td>
+<td>Curva de Lorenz Generalizada (<em>lc</em>)</td>
 </tr>
 <tr>
 <td>Desfase relativo de la renta mediana de la población en riesgo de pobreza (<em>rmpg</em>)</td>
 <td>Curva de Lorenz (<em>lc</em>)</td>
+<td> </td>
 </tr>
 <tr>
 <td>Índice FGT(1) (Foster, Greer, and Thorbecke, 1984) (<em>s1</em>)</td>
-<td><strong>Análisis Bienestar</strong></td>
+<td> </td>
+<td> </td>
 </tr>
 <tr>
 <td>Índice SST (Shorrocks, 1995) (<em>s2</em>)</td>
-<td>Rentas medias por hogar, persona y u.c. (<em>mih</em>, <em>mip</em>, <em>miuc</em>)</td>
+<td> </td>
+<td> </td>
 </tr>
 <tr>
 <td>Curva TIP (Shorrocks, 1995; Jenkins and Lambert, 1997) (<em>tip</em>)</td>
-<td>Curva de Lorenz Generalizada (<em>lc</em>)</td>
+<td> </td>
+<td> </td>
 </tr>
 </tbody></table>
 
 <p>(*) Ver manual de referencia  del paquete <strong>rtip</strong> (Berihuete, Ramos, and Sordo, 2016).</p>
 
-<p>Para su cálculo la información se obtiene de las encuestas EU-SILC (European Union Statistics on Income and Living Conditions) proporcionadas por Eurostat, y de las Encuestas de Condiciones de Vida (ECV) proporcionadas por el INE.</p>
-
-  </article>
+ </article>
   <!-- Presenter Notes -->
 </slide>
 
@@ -235,9 +240,13 @@ head(Castilla_LaMancha, 3)
     <div class='right' style='float:right;width:48%'>
      <p>Así, para una población de $n$ individuos tales que $x_1 \le x_2 \le \cdots \le x_n$ se tiene</p>
 
-<p>$$tip \left( \frac{i}{n},z \right) = \sum<em>{j = 1}<sup>i</sup> \frac{(z-x_j)</em>{+}}{n}$$</p>
+<div>
+$$tip \left( \frac{i}{n},z \right) = \sum_{j=1}^i \frac{(z-x_j)_{+}}{n} $$
+</div>
 
-<p>para $i=1,2, \dots n$ y donde $a_{+} = \max { 0, a }$ (Jenkins and Lambert, 1997).</p>
+<p>para $i=1,2, \dots n$ y donde $a_{+}=$ max{0,a}.</p>
+
+<p>(Jenkins and Lambert, 1997)</p>
 
     </div>
   </article>
@@ -318,30 +327,26 @@ $$</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-11" style="background:;">
+<slide class="" id="slide-12" style="background:;">
   <hgroup>
     <h2>Referencias</h2>
   </hgroup>
   <article data-timings="">
-    <p>[1] A. Berihuete, C. D. Ramos and M. A. Sordo. <em>rtip: Inequality,
-Welfare and Poverty Indices and Curves using the EU-SILC Data</em>. R
-package version 1.0.0. 2016. <URL:
-https://CRAN.R-project.org/package=rtip>.
-[1] J. Foster, J. Greer and E. Thorbecke. &quot;A Class of Decomposable
-Poverty Measures&quot;. In: <em>Econometrica</em> 52.3 (1984), pp. 761-766.
-[1] S. Jenkins and P. J. Lambert. &quot;Three &#39;I&#39;s of Poverty Curves,
-with an Analysis of UK Poverty Trends&quot;. In: <em>Oxford Economic
-Papers</em> 49.3 (1997), pp. 317-27.
-[1] A. F. Shorrocks. &quot;Revisiting the Sen Poverty Index&quot;. In:
-<em>Econometrica</em> 63.5 (1995), pp. 1225-1230.
-[1] K. Xu and L. Osberg. &quot;A Distribution-free Test for Deprivation
-Dominance&quot;. In: <em>Econometric Reviews</em> 17.4 (1998), pp. 415-429.</p>
+    <p>A. Berihuete, C. D. Ramos and M. A. Sordo. rtip: Inequality, Welfare and Poverty Indices and Curves using the EU-SILC Data. R package version 1.0.0. 2016. </p>
+
+<p>J. Foster, J. Greer and E. Thorbecke. &quot;A Class of Decomposable Poverty Measures&quot;. In: Econometrica 52.3 (1984), pp. 761-766. </p>
+
+<p>S. Jenkins and P. J. Lambert. &quot;Three &#39;I&#39;s of Poverty Curves, with an Analysis of UK Poverty Trends&quot;. In: Oxford Economic Papers 49.3 (1997), pp. 317-27. </p>
+
+<p>A. F. Shorrocks. &quot;Revisiting the Sen Poverty Index&quot;. In: Econometrica 63.5 (1995), pp. 1225-1230. </p>
+
+<p>K. Xu and L. Osberg. &quot;A Distribution-free Test for Deprivation Dominance&quot;. In: Econometric Reviews 17.4 (1998), pp. 415-429.</p>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-12" style="background:;">
+<slide class="" id="slide-13" style="background:;">
   <hgroup>
     <h2>Muchas gracias por su atención</h2>
   </hgroup>
@@ -349,6 +354,8 @@ Dominance&quot;. In: <em>Econometric Reviews</em> 17.4 (1998), pp. 415-429.</p>
     <p><a href="mailto:carmen.ramos@uca.es">carmen.ramos@uca.es</a></p>
 
 <p><a href="mailto:angel.berihuete@uca.es">angel.berihuete@uca.es</a></p>
+
+<p><a href="mailto:mangel.sordo@uca.es">mangel.sordo@uca.es</a></p>
 
 <p><a href="https://github.com/AngelBerihuete/rtip">https://github.com/AngelBerihuete/rtip</a></p>
 
@@ -428,8 +435,14 @@ Dominance&quot;. In: <em>Econometric Reviews</em> 17.4 (1998), pp. 415-429.</p>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=12 title='Muchas gracias por su atención'>
+        data-slide=12 title='Referencias'>
          12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Muchas gracias por su atención'>
+         13
       </a>
     </li>
   </ul>

@@ -146,3 +146,9 @@ testGL(Castilla_LaMancha, Andalucia, generalized = TRUE, samplesize = 10)
 ```
 
 
+
+$$tip \left( \frac{i}{n},z \right) = \sum_{j = 1}^i \frac{(z-x_j)_{+}}{n}$$
+  
+  
+  output: ioslides_presentation
+
