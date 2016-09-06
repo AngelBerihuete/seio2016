@@ -176,7 +176,8 @@ $$
 
 donde $tip_A(p,z)$ y $tip_B(p,z)$ son las curvas TIP asociadas a $A$ y $B$, respectivamente.
 
-¿Realmente la curva TIP de Andalucía domina a la de Castilla-La Mancha?
+¿Realmente la curva TIP de Andalucía domina a la de Castilla-La Mancha? 
+
 
 Implementamos el test estadístico de Xu and Osberg (1998)  
 
@@ -228,8 +229,9 @@ testTIP(Castilla_LaMancha, Andalucia, same.arpt.value = arpt(ESP))
 ```
 
 ---
-
 ## Referencias
+
+A. Alfons and M. Templ. "Estimation of Social Exclusion Indicators from Complex Surveys: The R Package laeken". In: Journal of Statistical Software 54.15 (2013), pp. 1-25.
 
 A. Berihuete, C. D. Ramos and M. A. Sordo. rtip: Inequality, Welfare and Poverty Indices and Curves using the EU-SILC Data. R package version 1.0.0. 2016. 
 

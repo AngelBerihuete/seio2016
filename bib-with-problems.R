@@ -1,3 +1,13 @@
+# REf
+
+```{r,results="asis"}
+bibliography()
+```
+
+
+---
+  
+
 @incollection{Shorrocks1998,
   author       = {Shorrocks, Anthony F.}, 
   title        = {Deprivation Profiles and Deprivation Indices},
