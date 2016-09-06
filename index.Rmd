@@ -55,9 +55,6 @@ Curva TIP `r citep(bib[[c("Shorrocks1995", "Jenkins1997")]])` (*tip*) | Curva de
 
 (*) Ver manual de referencia  del paquete __rtip__ `r citep(bib[["rtip"]])`.
 
-Para su cálculo la información se obtiene de las encuestas EU-SILC (European Union Statistics on Income and Living Conditions) proporcionadas por Eurostat, y de las Encuestas de Condiciones de Vida (ECV) proporcionadas por el INE.
-
-
 ---
 
 ## Instalación del paquete
@@ -113,7 +110,7 @@ arpr(Castilla_LaMancha, arpt(Castilla_LaMancha), ci = TRUE, rep = 1000, verbose 
 
 ---&twocol
 
-## La curva TIP 
+## Indicador gráfico de pobreza: la curva TIP 
 
 Dada una distribución de rentas $X$ y fijado un umbral de pobreza $z>0$, la curva TIP (Three I's of Poverty), denotada por $tip(p,z)$, donde $0 \leq p \leq 1$, porporciona para cada $p$, el acumulado de las brechas de pobreza per cápita del $100p \%$ de los individuos más pobres.
 
@@ -193,14 +190,6 @@ testTIP(Andalucia, Castilla_LaMancha, pz = 0.6, same.arpt.value = arpt(ESP),
 
 ```{r, echo=TRUE}
 testTIP(Castilla_LaMancha, Andalucia, same.arpt.value = arpt(ESP))
-```
-
----
-
-## Referencias
-
-```{r,results="asis", echo=FALSE}
-bibliography()
 ```
 
 ---

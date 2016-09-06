@@ -45,14 +45,11 @@ Análisis Pobreza | Análisis Desigualdad
 Umbral de riesgo de pobreza (*arpt*)  | Coeficiente de Gini (*gini*) | miuc
 Tasa de riesgo de pobreza (*arpr*)    | Ratio de quintiles, S80/S20 (*qsr*) 
 Desfase relativo de la renta mediana de la población en riesgo de pobreza (*rmpg*)      | Curva de Lorenz (*lc*)     
-Índice FGT(1) (Foster, Greer, and Thorbecke, 1984) (*s1*)                      | <div class="bg-olive"> ANÁLISIS DE BIENESTAR </div>
+Índice FGT(1) (Foster, Greer, and Thorbecke, 1984) (*s1*)                      | <div class=""> ANÁLISIS DE BIENESTAR </div>
 Índice SST (Shorrocks, 1995) (*s2*) | Rentas medias por hogar, persona y u.c. (*mih*, *mip*, *miuc*)
 Curva TIP (Shorrocks, 1995; Jenkins and Lambert, 1997) (*tip*) | Curva de Lorenz Generalizada (*lc*) 
 
 (*) Ver manual de referencia  del paquete __rtip__ (Berihuete, Ramos, and Sordo, 2016).
-
-Para su cálculo la información se obtiene de las encuestas EU-SILC (European Union Statistics on Income and Living Conditions) proporcionadas por Eurostat, y de las Encuestas de Condiciones de Vida (ECV) proporcionadas por el INE.
-
 
 ---
 
@@ -138,7 +135,7 @@ arpr(Castilla_LaMancha, arpt(Castilla_LaMancha), ci = TRUE, rep = 1000, verbose 
 
 ---&twocol
 
-## La curva TIP 
+## Indicador gráfico de pobreza: la curva TIP 
 
 Dada una distribución de rentas $X$ y fijado un umbral de pobreza $z>0$, la curva TIP (Three I's of Poverty), denotada por $tip(p,z)$, donde $0 \leq p \leq 1$, porporciona para cada $p$, el acumulado de las brechas de pobreza per cápita del $100p \%$ de los individuos más pobres.
 
@@ -229,24 +226,6 @@ testTIP(Castilla_LaMancha, Andalucia, same.arpt.value = arpt(ESP))
 ## $decision
 ## [1] "Reject null hypothesis"
 ```
-
----
-
-## Referencias
-
-[1] A. Berihuete, C. D. Ramos and M. A. Sordo. _rtip: Inequality,
-Welfare and Poverty Indices and Curves using the EU-SILC Data_. R
-package version 1.0.0. 2016. <URL:
-https://CRAN.R-project.org/package=rtip>.
-[1] J. Foster, J. Greer and E. Thorbecke. "A Class of Decomposable
-Poverty Measures". In: _Econometrica_ 52.3 (1984), pp. 761-766.
-[1] S. Jenkins and P. J. Lambert. "Three 'I's of Poverty Curves,
-with an Analysis of UK Poverty Trends". In: _Oxford Economic
-Papers_ 49.3 (1997), pp. 317-27.
-[1] A. F. Shorrocks. "Revisiting the Sen Poverty Index". In:
-_Econometrica_ 63.5 (1995), pp. 1225-1230.
-[1] K. Xu and L. Osberg. "A Distribution-free Test for Deprivation
-Dominance". In: _Econometric Reviews_ 17.4 (1998), pp. 415-429.
 
 ---
 
